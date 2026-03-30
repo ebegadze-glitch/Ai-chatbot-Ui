@@ -1,0 +1,31 @@
+// Flexbox mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin bubble-style($bg, $color, $radius-side) {
+    background-color: $bg;
+    color: $color;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    
+    @if $radius-side=='left' {
+        border-bottom-left-radius: 2px;
+    }
+    @else {
+        border-bottom-right-radius: 2px;
+    }
+}
+//ღილაკის ჰოვერის ეფექტი
+@mixin button-hover($color) {
+    transition: all 0.3s ease;
+    &:hover {
+        background-color: darken($color, 10%) {
+            transform: scale(1.05);
+            cursor: pointer;
+
+        }
+    }
+}
