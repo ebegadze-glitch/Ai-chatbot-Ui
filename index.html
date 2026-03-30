@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <title>AI ჩათბოტის UI</title>
+    <link rel="stylesheet" href="main.css">
+    
+</head>
+<body>
+    
+    <div class="chat-widget">
+        
+        <div class="chat-header">
+            <div class="bot-info">
+                <span class="status-icon online"></span>
+                <h3>AI ასისტენტი</h3>
+            </div>
+            <button class="close-btn">&times;</button>
+        </div>
+        
+        <div class="chat-body">
+            
+            <div class="message message-bot">
+                <div class="avatar">🤖</div>
+                <div class="text-wrapper">
+                    <p>გამარჯობა! მე ვარ ხელოვნური ინტელექტი. რით შემიძლია დაგეხმაროთ?</p>
+                    <span class="time">12:00 PM</span>
+                </div>
+            </div>
+            
+            <div class="message message-user">
+                <div class="text-wrapper">
+                    <p>გამარჯობა, მჭირდება SCSS-ის დავალების შესრულება.</p>
+                    <span class="time">12:01 PM</span>
+                </div>
+            </div>
+            
+             <div class="message message-bot typing">
+                <div class="avatar">🤖</div>
+                <div class="typing-indicator">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="chat-input">
+            <input type="text" placeholder="ჩაწერეთ შეტყობინება...">
+            <button class="send-btn">
+                <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
+            </button>
+        </div>
+        
+    </div>
+
+</body>
+</html>

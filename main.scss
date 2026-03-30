@@ -1,0 +1,168 @@
+@import 'variables';
+@import 'mixins'; 
+//ზოგადი სტილი
+body {
+    background-color: $bg-light;
+    @include flex-center;
+    height: 100vh;
+    margin: 0;
+    font-family: $font-main;
+}
+.chat-widget {
+    width: $chat-width;
+    height: $chat-height;
+    background-color: #ffffff;
+    border-radius: $chat-border-radius;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+//სათაური
+.chat-header {
+    background-color: $primary-color;
+    padding: 15px 20px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.bot-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.status-icon.online {
+    width: 10px;
+    height: 10px;
+    background-color: $online-color;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+h3 {
+    font-size: 1.1rem;
+}
+.close-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s ;
+    &:hover {
+        opacity: 1;
+    }
+}
+//შეტყობინებების სექცია
+
+.chat-body {
+    flex: 1;
+    padding: $padding-main;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    background: #fdfdfd;
+}
+.message {
+   display: flex;
+   gap: 10px;
+   max-width: 85%;
+}
+.message-bot {
+    align-self: flex-start;
+    .text-wrapper {
+        @include bubble-style($bot-msg-bg, $bot-msg-text, 'left');
+    } 
+}
+.message-user {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+    .text-wrapper {
+        @include bubble-style($user-msg-bg, $user-msg-text, 'right');
+    }
+
+
+.avatar {
+    font-size: 1.5rem;}
+    .text-wrapper {
+        position: relative;
+        p{
+            line-height: 1.4;
+        }
+        .time {
+            margin-top: 5px;
+            display: block;
+            font-size: 0.7rem;
+            color: $text-muted;
+        }
+    }
+}
+
+
+//ტექსტის შეყვანის სექცია
+.chat-input {
+    padding: 15px;
+    border-top: 1px solid $border-color;
+    display: flex;
+    gap: 10px;
+    input {
+        flex: 1;
+        padding: 10px 15px;
+        border: 1px solid $border-color;
+        border-radius: 20px;
+        outline: none;
+        transition: 0.3s;
+        &:focus {
+            border-color: $primary-color;
+        }
+    }
+    .send-btn {
+        background-color: $primary-color;
+        border: none;
+        width: 40px;
+        height: 40px;
+        color: #ffffff;
+        padding: 10px 15px;
+        border-radius: 50px;
+        @include flex-center;
+        @include button-hover($primary-color);
+    
+        svg {
+            width: 18px;
+            fill: currentColor;
+            transform: rotate(-45deg);//isris daxra
+
+        }
+    }
+
+}
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 5px 0;
+    span {
+        width: 6px;
+        height: 6px;
+        background-color: $text-muted;
+        border-radius: 50%;
+        animation: typing-bounce 1.4s infinite ease-in-out;
+
+        &:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        &:nth-child(3) {            animation-delay: 0.4s;
+        }
+    }
+    @keyframes typing-bounce { 0%, 80%, 100% {
+            transform: translateY(0); 
+            opacity: 0.4;
+        }
+        40% {
+            transform: translateY(-6px); opacity: 1;
+
+    }
+        
+    }
+}
